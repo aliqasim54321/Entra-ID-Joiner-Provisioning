@@ -8,9 +8,8 @@ The first section of the lab focuses on the **Joiner** stage of JML: creating id
 
 The onboarding source was a CSV containing 20 cybersecurity contractor personas with fields such as UPN, display name, job title, department, employee type, contract dates, and security-related metadata.
 
-```markdown
-![Figure 1 - CSV dataset containing 20 contractor identities](./images/fig01.png)
-```
+
+![Figure 1 - CSV dataset containing 20 contractor identities](images/fig01.png)
 
 The CSV represents a simplified HR/source-of-truth feed for the Joiner process.
 
@@ -24,25 +23,24 @@ Connect-MgGraph `
 
 A `foreach` loop imported each CSV row, transformed the source UPN suffix to the lab tenant, and created the user.
 
-```markdown
+
 ![Figure 2 - Microsoft Graph connection and bulk user provisioning](images/fig02.png)
-```
+
 
 ## Figure 3 — 20 Users Successfully Created
 
 The script output confirmed successful identity creation.
 
-```markdown
+
 ![Figure 3 - Successful creation of all 20 users](images/fig03.png)
-```
+
 
 ## Figure 4 — Users Visible in Microsoft Entra ID
 
 The newly provisioned accounts were verified in the Entra admin center.
 
-```markdown
 ![Figure 4 - Newly provisioned users in Microsoft Entra ID](images/fig04.png)
-```
+
 
 ## Figure 5 — IAM Staff Attribute-Based Membership
 
@@ -56,9 +54,8 @@ $IAMUsers = Get-MgUser -All |
     }
 ```
 
-```markdown
 ![Figure 5 - IAM Staff group and attribute-based membership](images/fig05.png)
-```
+
 
 > Describe this as **PowerShell-driven attribute-based membership automation**, not native Entra dynamic membership.
 
@@ -66,17 +63,17 @@ $IAMUsers = Get-MgUser -All |
 
 The PowerShell command evaluated job-title attributes and added qualifying identities to the IAM Staff group.
 
-```markdown
+
 ![Figure 6 - PowerShell logic adding IAM users based on attributes](images/fig06.png)
-```
+
 
 ## Figure 7 — Cybersecurity Contractors Group
 
 A second group, **Cybersecurity Contractors**, was created and used as the common group for contractor identities.
 
-```markdown
+
 ![Figure 7 - Cybersecurity Contractors group containing lab users](images/fig07.png)
-```
+
 
 This group was later used as a target for an Access Review.
 
@@ -111,9 +108,9 @@ A group gives users access together. An Administrative Unit limits where an admi
 
 An Administrative Unit was created, **Aleksei Volkov** was added, and an administrative role was scoped to that Administrative Unit.
 
-```markdown
+
 ![Figure 8 - Administrative Unit with Aleksei Volkov and scoped admin role](images/fig08.png)
-```
+
 
 ## Joiner Outcome
 
