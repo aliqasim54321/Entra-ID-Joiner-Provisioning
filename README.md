@@ -9,7 +9,7 @@ The first section of the lab focuses on the **Joiner** stage of JML: creating id
 The onboarding source was a CSV containing 20 cybersecurity contractor personas with fields such as UPN, display name, job title, department, employee type, contract dates, and security-related metadata.
 
 ```markdown
-![Figure 1 - CSV dataset containing 20 contractor identities](images/fig01.png)
+![Figure 1 - CSV dataset containing 20 contractor identities](./images/fig01.png)
 ```
 
 The CSV represents a simplified HR/source-of-truth feed for the Joiner process.
